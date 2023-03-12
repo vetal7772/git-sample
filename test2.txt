@@ -1,2 +1,3 @@
-Another attemp to Git 12345
+Another attemp to Git 1234567
 Another line
+Lesson3 git status
