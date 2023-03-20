@@ -13,6 +13,7 @@ public class Outer {
     static class Nested {
         Nested() {
             System.out.println("Створення об'єкта вкладеного класу");
+            System.out.println("Створення об'єкта вкладеного класу");
         }
     }
 }
