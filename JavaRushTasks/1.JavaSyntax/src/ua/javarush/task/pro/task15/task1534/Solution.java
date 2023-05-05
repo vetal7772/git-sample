@@ -21,7 +21,6 @@ public class Solution {
     }
 
     public static void trimByPosition(FileChannel fileChannel) throws IOException {
-        //напишіть тут ваш код
-
+        fileChannel.truncate(fileChannel.position());
     }
 }
