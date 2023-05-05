@@ -14,6 +14,6 @@ public class Solution {
     public static void main(String[] args) {
         String fileName = "/usr/lib/rpm/rpm.log";
         rpmLogPath = Paths.get(Path.of(fileName).toAbsolutePath().toUri());
-
+// rpmLogPath = Paths.get(new URI("file:/usr/lib/rpm/rpm.log"));
     }
 }
