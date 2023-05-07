@@ -37,13 +37,13 @@ public class Solution {
         var dayOfWeek = dateTime.getDayOfWeek().getValue();
         System.out.println(dayOfWeek);
         var time = dateTime.getHour();
-        if (dayOfWeek == 5 && time >= 22){
-           return true;
-        }
-        if (dayOfWeek == 6) {
+        if (dayOfWeek == FRIDAY && time >= WEEKEND_START_FRIDAY_CUT_OFF_HOUR) {
             return true;
         }
-        if (dayOfWeek ==7 && time<23) {
+        if (dayOfWeek == SATURDAY) {
+            return true;
+        }
+        if (dayOfWeek == SUNDAY && time < WEEKEND_END_SUNDAY_CUT_OFF_HOUR) {
             return true;
         }
         return false;
