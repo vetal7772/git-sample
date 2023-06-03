@@ -13,10 +13,12 @@ public class Solution {
         try (Scanner scanner = new Scanner(System.in);
             FileWriter writer= new FileWriter(scanner.nextLine())) {
             char[] chars = new char[]{'j', 'a', 'v', 'a'};
+
             for (char aChar : chars) {
                 writer.write(aChar);
             }
         } catch (IOException e) {
+
             System.out.println("Something went wrong : " + e);
         }
     }
