@@ -1,5 +1,5 @@
 //package ua.javarush.task.pro.task09.task0908;
-//
+
 //import java.util.regex.Pattern;
 //
 ///*
@@ -139,9 +139,9 @@ public class Solution {
     private static final String HEX = "0123456789abcdef";
 
     public static void main(String[] args) {
-        String binaryNumber = "100111010000";
+        String binaryNumber = "00100111010000";
         System.out.println("Двійкове число " + binaryNumber + " дорівнює шістнадцятковому числу " + toHex(binaryNumber));
-        String hexNumber = "3MmF";
+        String hexNumber = "3df";
         System.out.println("Шістнадцяткове число " + hexNumber + " дорівнює двійковому числу " + toBinary(hexNumber));
     }
 
@@ -151,9 +151,18 @@ public class Solution {
         if (binaryNumber == null || binaryNumber == "") {
             return heximal;
         }
-//        if ((Integer.parseInt(binaryNumber))0||Integer.parseInt(binaryNumber)==1){
-//            return heximal;
-//        }
+
+        StringBuilder temp = new StringBuilder();
+        if (binaryNumber.length() % 4 == 1) {
+            temp.append("000").append(binaryNumber);
+        } else if (binaryNumber.length() % 4 == 2) {
+            temp.append("00").append(binaryNumber);
+        } else if (binaryNumber.length() % 4 == 3) {
+            temp.append("0").append(binaryNumber);
+        } else {
+            temp.append(binaryNumber);
+        }
+
         for (int i = 0; i < binaryNumber.length(); i++) {
             decimal = decimal + (Integer.parseInt(String.valueOf(binaryNumber.charAt(binaryNumber.length() - i - 1)))) * (int) Math.pow(2, i);
         }
