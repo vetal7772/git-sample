@@ -39,4 +39,31 @@ public class Solution {
         factory.newThread(r).start();
         factory.newThread(r).start();
     }
+
+    public static class AmigoThreadFactory implements ThreadFactory {
+        private static final AtomicInteger POOL_NUMBER = new AtomicInteger(1);
+        private final ThreadGroup group;
+        private final AtomicInteger threadNumber = new AtomicInteger(1);
+        private final String namePrefix;
+
+        public AmigoThreadFactory() {
+            group = Thread.currentThread().getThreadGroup();
+            namePrefix = group.getName() + "-pool-" +
+                    POOL_NUMBER.getAndIncrement() +
+                    "-thread-";
+        }
+
+        public Thread newThread(Runnable r) {
+            Thread t = new Thread(group, r,
+                    namePrefix + threadNumber.getAndIncrement(),
+                    0);
+            if (t.isDaemon()) {
+                t.setDaemon(false);
+            }
+            if (t.getPriority() != Thread.NORM_PRIORITY) {
+                t.setPriority(Thread.NORM_PRIORITY);
+            }
+            return t;
+        }
+    }
 }
