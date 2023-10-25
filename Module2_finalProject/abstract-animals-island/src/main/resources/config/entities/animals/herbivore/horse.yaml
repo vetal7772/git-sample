@@ -1,0 +1,8 @@
+icon: H
+limits:
+  maxSpeed: 5
+  maxFood: 3
+  maxWeight: 400
+  maxAmount: 20
+stringTargetMatrix:
+  Wolf: 0
