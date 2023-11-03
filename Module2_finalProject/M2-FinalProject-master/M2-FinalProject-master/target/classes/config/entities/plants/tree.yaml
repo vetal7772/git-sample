@@ -1,0 +1,6 @@
+icon: 🌴
+limits:
+  maxSpeed: 0
+  maxFood: 0
+  maxWeight: 100
+  maxAmount: 200

@@ -34,20 +34,6 @@ public class Statistics {
     private Statistics() {
     }
 
-//    public static int calculateTotalAnimals(GameMap gameMap) {
-//        int totalAnimals = 0;
-//        Cell[][] cells = gameMap.getCells();
-//
-//        for (int row = 0; row < cells.length; row++) {
-//            for (int column = 0; column < cells[row].length; column++) {
-//                Map<Class<? extends GameObject>, Set<GameObject>> residentsMap = cells[row][column].getResidents();
-//                for (Set<GameObject> residentSet : residentsMap.values()) {
-//                    totalAnimals += residentSet.size();
-//                }
-//            }
-//        }
-//        return totalAnimals;
-//    }
 
     public void resetCounters() {
         gameObjectEatenMap.clear();

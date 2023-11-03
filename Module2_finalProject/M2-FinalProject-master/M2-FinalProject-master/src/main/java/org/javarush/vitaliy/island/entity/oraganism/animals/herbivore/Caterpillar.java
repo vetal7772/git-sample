@@ -22,7 +22,6 @@ public class Caterpillar extends Herbivore implements GameEntity, AnimalBehaviou
                 .limits(getLimits())
                 .icon(getIcon())
                 .stringTargetMatrix(getStringTargetMatrix())
-                .famine(getLimits().getMaxFood())
                 .isAlive(getIsAlive())
                 .reproductionProbability(getReproductionProbability())
                 .hungerDecreased(getHungerDecreased())

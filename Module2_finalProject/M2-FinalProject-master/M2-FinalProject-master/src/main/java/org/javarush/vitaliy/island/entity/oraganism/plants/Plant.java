@@ -10,7 +10,7 @@ import org.javarush.vitaliy.island.abstraction.interfaces.Reproducible;
 import org.javarush.vitaliy.island.config.Probably;
 import org.javarush.vitaliy.island.config.Statistics;
 import org.javarush.vitaliy.island.entity.map.Cell;
-import org.javarush.vitaliy.island.entity.map.CellHelper;
+import org.javarush.vitaliy.island.entity.map.CellEngine;
 import org.javarush.vitaliy.island.entity.oraganism.Limits;
 import org.javarush.vitaliy.island.factory.GameObjectPrototypeFactory;
 
@@ -84,10 +84,10 @@ public abstract class Plant implements Organism, Reproducible {
 
                     if (isReproduceUnderLimit(newPlant, currentCell)) {
                         Statistics.getInstance().gameObjectsReproduce(this);
-                        CellHelper.addOrganism(currentCell, newPlant);
+                        CellEngine.addOrganism(currentCell, newPlant);
                     } else {
                         newPlant = null;
-                        CellHelper.addOrganism(currentCell, newPlant);
+                        CellEngine.addOrganism(currentCell, newPlant);
 
                     }
 

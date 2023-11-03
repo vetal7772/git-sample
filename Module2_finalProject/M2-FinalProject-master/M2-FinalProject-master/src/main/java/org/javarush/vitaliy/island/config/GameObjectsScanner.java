@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * Scans all classes in the project
- * and returns all classes that are implementing {@link Organism}
+ * and returns all classes that are implementing {@link GameObject}
  * with {@link GameObjectEntity} annotation.
  */
 public class GameObjectsScanner {
@@ -28,16 +28,16 @@ public class GameObjectsScanner {
     }
 
     /**
-     * Returns all classes that are implementing {@link Organism}
+     * Returns all classes that are implementing {@link GameObject}
      * annotated with {@link GameObjectEntity}.
      *
-     * @return set of classes extending Organism and annotated with {@link GameObjectEntity}.
+     * @return set of classes extending GameObject and annotated with {@link GameObjectEntity}.
      */
     public Set<Class<? extends GameObject>> getAllGameObjectsClasses() {
         return reflections.getSubTypesOf(GameObject.class)
                 .stream()
-                .filter(c -> c.isAnnotationPresent(GameObjectEntity.class))
-                .filter(c -> c.isAnnotationPresent(Config.class))
+                .filter(a -> a.isAnnotationPresent(GameObjectEntity.class))
+                .filter(a -> a.isAnnotationPresent(Config.class))
                 .collect(java.util.stream.Collectors.toSet());
     }
 //    public Set<Class<? extends GameObjectLabel>> getAllGameObjectsClasses() {

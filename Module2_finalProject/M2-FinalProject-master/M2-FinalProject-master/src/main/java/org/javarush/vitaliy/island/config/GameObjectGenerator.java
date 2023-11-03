@@ -29,7 +29,7 @@ public class GameObjectGenerator {
         for (GameObject prototype : prototypeFactory.getPrototypes()) {
             residents.computeIfAbsent(prototype.getClass(), k -> new HashSet<>());
             Set<GameObject> gameObjectFamilyContainer = residents.get(prototype.getClass());
-            double randomAmount = Probably.randomInt(0, prototype.getLimits().getMaxAmount());
+            int randomAmount = Probably.randomInt(0, prototype.getLimits().getMaxAmount());
             for (int i = 0; i < randomAmount; i++) {
                 GameObject newObject = prototype.reproduce();
                 newObject.setGameObjectCell(cell);

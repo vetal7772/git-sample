@@ -7,7 +7,7 @@ import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
 import org.javarush.vitaliy.island.config.Probably;
 import org.javarush.vitaliy.island.config.Statistics;
 import org.javarush.vitaliy.island.entity.map.Cell;
-import org.javarush.vitaliy.island.entity.map.CellHelper;
+import org.javarush.vitaliy.island.entity.map.CellEngine;
 import org.javarush.vitaliy.island.entity.oraganism.Limits;
 import org.javarush.vitaliy.island.abstraction.interfaces.Movable;
 import org.javarush.vitaliy.island.abstraction.interfaces.Organism;
@@ -16,8 +16,10 @@ import org.javarush.vitaliy.island.factory.GameObjectPrototypeFactory;
 
 import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-import static org.javarush.vitaliy.island.entity.map.CellHelper.removeOrganism;
+import static org.javarush.vitaliy.island.entity.map.CellEngine.removeOrganism;
 
 @NoArgsConstructor
 @SuperBuilder
@@ -55,7 +57,7 @@ public abstract class Animal implements Organism, Movable {
         return Probably.randomInt(5, 20);
     }
 
-       private  int hungerDecreased;
+    private int hungerDecreased;
 
     public int getHungerDecreased() {
         return Probably.randomInt(10, 25);
@@ -165,7 +167,7 @@ public abstract class Animal implements Organism, Movable {
             Cell currentCell = getCell();
             if (currentCell != null) {
                 synchronized (currentCell.getLock()) {
-                    CellHelper.removeOrganism(currentCell, this);
+                    CellEngine.removeOrganism(currentCell, this);
                     Statistics.getInstance().diedFromStarvation(this);
                 }
             }
@@ -182,13 +184,13 @@ public abstract class Animal implements Organism, Movable {
             return;
         }
         synchronized (currentCell.getLock()) {
-            List<Cell> neighborCells = new ArrayList<>(CellHelper.getNeighborCells(currentCell));
+            List<Cell> neighborCells = new ArrayList<>(CellEngine.getNeighborCells(currentCell));
             if (!neighborCells.isEmpty()) {
                 int distance = Probably.randomInt(1, limits.getMaxSpeed() + 1);
-                Cell nextCell = CellHelper.chooseNextCell(neighborCells, distance);
+                Cell nextCell = CellEngine.chooseNextCell(neighborCells, distance);
                 if (nextCell != null) {
                     synchronized (nextCell.getLock()) {
-                        CellHelper.moveOrganismToCell(currentCell, nextCell, this);
+                        CellEngine.moveOrganismToCell(currentCell, nextCell, this);
                     }
                 }
             }
@@ -197,6 +199,7 @@ public abstract class Animal implements Organism, Movable {
 
     public void reproduceAnimal(Animal parentAnimal) {
         GameObject newAnimal = parentAnimal.multiply();
+
         if (newAnimal != null) {
             Cell currentCell = parentAnimal.getCell();
             if (currentCell != null) {
@@ -205,10 +208,10 @@ public abstract class Animal implements Organism, Movable {
 
                     if (isReproduceUnderLimit(newAnimal, currentCell)) {
                         Statistics.getInstance().gameObjectsReproduce(this);
-                        CellHelper.addOrganism(currentCell, newAnimal);
+                        CellEngine.addOrganism(currentCell, newAnimal);
                     } else {
                         newAnimal = null;
-                        CellHelper.addOrganism(currentCell, newAnimal);
+                        CellEngine.addOrganism(currentCell, newAnimal);
 
                     }
 
@@ -220,17 +223,18 @@ public abstract class Animal implements Organism, Movable {
 
     public boolean isReproduceUnderLimit(GameObject newAnimal, Cell cell) {
         Map<Class<? extends GameObject>, Set<GameObject>> residentsCell = cell.getResidents();
-        int numRes = 0;
-        for (Set<GameObject> residentSet : residentsCell.values()) {
 
-            for (GameObject resident : residentSet) {
-                numRes++;
-                if (numRes < resident.getLimits().getMaxAmount()) {
+        Set<GameObject> target = residentsCell.get(newAnimal.getClass());
 
-                    return true;
-                }
+
+        for (GameObject resident : target) {
+
+            if (target.size() < resident.getLimits().getMaxAmount()) {
+
+                return true;
             }
         }
+
 
         return false;
     }

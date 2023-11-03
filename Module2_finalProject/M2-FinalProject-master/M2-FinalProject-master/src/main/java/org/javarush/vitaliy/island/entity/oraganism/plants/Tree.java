@@ -7,6 +7,7 @@ import lombok.experimental.SuperBuilder;
 import org.javarush.vitaliy.island.abstraction.annotations.Config;
 import org.javarush.vitaliy.island.abstraction.annotations.GameObjectEntity;
 import org.javarush.vitaliy.island.abstraction.interfaces.GameEntity;
+import org.javarush.vitaliy.island.abstraction.interfaces.PlantBehaviour;
 
 @GameObjectEntity
 @Config(fileName = "config/entities/plants/tree.yaml")
@@ -14,7 +15,7 @@ import org.javarush.vitaliy.island.abstraction.interfaces.GameEntity;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Tree extends Plant implements GameEntity {
+public class Tree extends Plant implements GameEntity, PlantBehaviour {
 
 
     public Tree reproduce() {

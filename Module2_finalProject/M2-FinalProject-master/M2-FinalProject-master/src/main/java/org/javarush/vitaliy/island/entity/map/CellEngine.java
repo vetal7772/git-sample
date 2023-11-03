@@ -8,7 +8,7 @@ import org.javarush.vitaliy.island.config.Probably;
 
 import java.util.*;
 
-public class CellHelper {
+public class CellEngine {
     private static final Object lock = new Object(); // Спільний лок для всіх операцій
 
     public static List<Cell> getNeighborCells(Cell cell) {
@@ -69,7 +69,7 @@ public class CellHelper {
         for (int i = 0; i < distance; i++) {
             List<Cell> nextNeighborCells = new ArrayList<>();
             for (Cell cell : neighborCells) {
-                nextNeighborCells.addAll(CellHelper.getNeighborCells(cell));
+                nextNeighborCells.addAll(CellEngine.getNeighborCells(cell));
             }
             if (!nextNeighborCells.isEmpty()) {
                 int randomIndex = Probably.randomInt(0, nextNeighborCells.size());

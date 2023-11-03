@@ -16,7 +16,7 @@ public class StatisticMonitor {
     // TODO: Implement statistic monitor here.
     public static void printGameMapWithStatistics(GameMap gameMap) {
         Statistics statistics = Statistics.getInstance();
-        int currentYear = statistics.getYear();
+         int currentYear = statistics.getYear();
         int totalObjects = Statistics.calculateTotalObjects(gameMap);
 
        // int totalAnimals = Statistics.calculateTotalAnimals(gameMap);

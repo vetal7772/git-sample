@@ -7,6 +7,7 @@ import lombok.experimental.SuperBuilder;
 import org.javarush.vitaliy.island.abstraction.annotations.Config;
 import org.javarush.vitaliy.island.abstraction.annotations.GameObjectEntity;
 import org.javarush.vitaliy.island.abstraction.interfaces.GameEntity;
+import org.javarush.vitaliy.island.abstraction.interfaces.PlantBehaviour;
 
 
 @GameObjectEntity
@@ -15,7 +16,7 @@ import org.javarush.vitaliy.island.abstraction.interfaces.GameEntity;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Bush extends Plant implements GameEntity {
+public class Bush extends Plant implements GameEntity, PlantBehaviour {
 
 
     public Bush reproduce() {

@@ -5,10 +5,6 @@ import org.javarush.vitaliy.island.engine.Simulation;
 import org.javarush.vitaliy.island.entity.map.GameMap;
 import org.javarush.vitaliy.island.factory.GameObjectPrototypeFactory;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
 /**
  * This class is responsible for application configuration at the startup.
  * <p>
@@ -17,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * <li>Registering all prototypes of game objects</li>
  * </ul>
  */
-public class AppConfigurator {
+public class AppConfigurator implements Runnable{
 
     private static AppConfigurator instance;
     private final GameObjectsScanner gameObjectsScanner = GameObjectsScanner.getInstance();
@@ -26,6 +22,7 @@ public class AppConfigurator {
     private final GameMapGenerator gameMapGenerator = GameMapGenerator.getInstance();
     private final CellGenerator cellGenerator = CellGenerator.getInstance();
     private final Simulation simulation = Simulation.getInstance();
+
 
 
     private AppConfigurator() {
@@ -40,6 +37,8 @@ public class AppConfigurator {
 
     /**
      * This method is responsible for making all necessary configurations at the application startup.
+     *
+     * @return
      */
 
 //    Island island = new Island();
@@ -53,17 +52,24 @@ public class AppConfigurator {
 //        service.scheduleAtFixedRate(console, 0, island.getMsToReloadConsole(), TimeUnit.MILLISECONDS);
 
 
-    public void init() {
+   //public void init() {
 
-
-        registerPrototypes();
      //  gameObjectFactory.printPrototypes();  // test method
 
-        GameMap.setInstance(generateGameMap());
-       simulation.startSimulation();
+@Override
+        public void run() {
+            registerPrototypes();
+            GameMap.setInstance(generateGameMap());
+            simulation.startSimulation();
+        }
+
+
+//       GameMap.setInstance(generateGameMap()) ;
+//       simulation.startSimulation();
         // TODO: implement gameField config loading.
         // TODO: implement gameField initialization with cells.
-    }
+       // return null;
+  //  }
 
 
     private void registerPrototypes() {
@@ -77,4 +83,6 @@ public class AppConfigurator {
     private GameMap generateGameMap() {
         return gameMapGenerator.createGameMap();
     }
+
+
 }

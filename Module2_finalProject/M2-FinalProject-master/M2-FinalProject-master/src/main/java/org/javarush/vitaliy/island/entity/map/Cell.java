@@ -13,9 +13,17 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Cell {
     private static long serialUID = 1L;
 
-    @Getter
-    @Setter
+//    @Getter
+//    @Setter
     private Map<Class<? extends GameObject>, Set<GameObject>> residents;
+
+    public Map<Class<? extends GameObject>, Set<GameObject>> getResidents() {
+        return residents;
+    }
+
+    public void setResidents(Map<Class<? extends GameObject>, Set<GameObject>> residents) {
+        this.residents = residents;
+    }
 
     @Builder.Default
     private final long UID = serialUID++;

@@ -27,58 +27,55 @@ public class GameMapGenerator {
         int numRows = cells.length;
         int numCols = cells[0].length;
 
-        for (int row = 0; row < numRows; row++) {
-            for (int column = 0; column < numCols; column++) {
+        for (int row = 0; row < cells.length; row++) {
+            for (int column = 0; column < cells[row].length; column++) {
                 Cell currentCell = cells[row][column];
+                Cell rightCell = null;
+                Cell bottomCell = null;
 
-                if (column + 1 < numCols) {
-                    currentCell.setNextCell(cells[row][column + 1]); // Сусід справа
+                if (column < cells[row].length - 1) {
+                    rightCell = cells[row][column + 1];
                 }
-                if (row + 1 < numRows) {
-                    currentCell.setNextCell(cells[row + 1][column]); // Сусід знизу
+
+                if (row < cells.length - 1) {
+                    bottomCell = cells[row + 1][column];
                 }
-                if (column - 1 >= 0) {
-                    currentCell.setNextCell(cells[row][column - 1]); // Сусід зліва
+
+                if (rightCell != null) {
+                    currentCell.setNextCell(rightCell);
+                    rightCell.setNextCell(currentCell);
                 }
-                if (row - 1 >= 0) {
-                    currentCell.setNextCell(cells[row - 1][column]); // Сусід зверху
+
+                if (bottomCell != null) {
+                    currentCell.setNextCell(bottomCell);
+                    bottomCell.setNextCell(currentCell);
                 }
+
             }
         }
     }
 }
-
 //    private void mapCells(Cell[][] cells) {
 //        int numRows = cells.length;
 //        int numCols = cells[0].length;
-//
-//        for (int row = 0; row < cells.length; row++) {
-//            for (int column = 0; column < cells[row].length; column++) {
-//
+
+//        for (int row = 0; row < numRows; row++) {
+//            for (int column = 0; column < numCols; column++) {
 //                Cell currentCell = cells[row][column];
 //
-//                Cell rightCell = null;
-//                Cell bottomCell = null;
-//
-//                if (column < cells[row].length - 1){
-//                    rightCell = cells[row][column+1];
+//                if (column + 1 < numCols) {
+//                    currentCell.setNextCell(cells[row][column + 1]); // Сусід справа
 //                }
-//
-//                if (row < cells.length - 1){
-//                    bottomCell = cells[row+1][column];
+//                if (row + 1 < numRows) {
+//                    currentCell.setNextCell(cells[row + 1][column]); // Сусід знизу
 //                }
-//
-//                if (rightCell!=null){
-//                    currentCell.setNext(rightCell);
-//                    rightCell.setNext(currentCell);
+//                if (column - 1 >= 0) {
+//                    currentCell.setNextCell(cells[row][column - 1]); // Сусід зліва
 //                }
-//
-//                if (bottomCell!=null){
-//                    currentCell.setNext(bottomCell);
-//                    bottomCell.setNext(currentCell);
+//                if (row - 1 >= 0) {
+//                    currentCell.setNextCell(cells[row - 1][column]); // Сусід зверху
 //                }
+//            }
 //        }
-//    }
-//}
 
 

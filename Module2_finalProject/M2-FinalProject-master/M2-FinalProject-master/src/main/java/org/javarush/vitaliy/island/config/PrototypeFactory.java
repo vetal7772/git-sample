@@ -18,7 +18,8 @@ import java.net.URL;
 public class PrototypeFactory {
 
     private static PrototypeFactory instance;
- private final ObjectMapper objectMapper = new YAMLMapper();
+
+    private final ObjectMapper objectMapper = new YAMLMapper();
 
     private PrototypeFactory() {
     }
@@ -30,28 +31,7 @@ public class PrototypeFactory {
         return instance;
     }
 
-//    public <T> T loadPrototype(@NotNull Class<T> type) {
-//        URL configFilePath = getConfigFilePath(type);
-//        if (configFilePath != null) {
-//            return loadObject(configFilePath, type);
-//        }
-//        return null;
-//    }
-//
-//    private URL getConfigFilePath(@NotNull Class<?> type) {
-//        PrototypeYamlPath yamlPath = PrototypeYamlPath.valueOf(type.getSimpleName().toUpperCase());
-//        return getClass().getClassLoader().getResource(yamlPath.getYamlFilePath());
-//    }
-//
-//    private <T> T loadObject(@NotNull URL configFilePath, Class<T> type) {
-//        try (InputStream input = configFilePath.openStream()) {
-//            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-//            return mapper.readValue(input, type);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+
     /**
      * Loads prototype object from yaml file.
      *
@@ -59,7 +39,6 @@ public class PrototypeFactory {
      * @param <T>  type of prototype object.
      * @return prototype object.
      */
-
 
 
     public <T> T loadPrototype(@NotNull Class<T> type) {
@@ -85,16 +64,15 @@ public class PrototypeFactory {
                     type);
             throw new InitGameException(message, e);
         }
-
         return gameObject;
     }
 
-    public GameObject[] getPrototypes() {
-        return null;
-    }
+//    public GameObject[] getPrototypes() {
+//        return null;
+//    }
 
-   // @Override
-    public GameObject reproduce() {
-        return null;
-    }
+    // @Override
+//    public GameObject reproduce() {
+//        return null;
+//    }
 }
