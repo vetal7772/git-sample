@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95e937e3-94e6-4752-83e3-bf2cf8b61ac9" name="Changes" comment="finalProject module2  07_11_2023">
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="95e937e3-94e6-4752-83e3-bf2cf8b61ac9" name="Changes" comment="finalProject module2 07_11_2023 some editions in ReadMe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1699004586860" duration="19181000" />
       <workItem from="1699105704207" duration="2255000" />
       <workItem from="1699201224930" duration="16163000" />
-      <workItem from="1699378261979" duration="2982000" />
+      <workItem from="1699378261979" duration="3951000" />
     </task>
     <task id="LOCAL-00001" summary="finalProject module2">
       <option name="closed" value="true" />
@@ -141,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699382436069</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finalProject module2 07_11_2023 some editions in ReadMe">
+      <option name="closed" value="true" />
+      <created>1699382974867</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699382974867</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finalProject module2 07_11_2023 some editions in ReadMe">
+      <option name="closed" value="true" />
+      <created>1699383210118</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699383210118</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +188,8 @@
     <MESSAGE value="finalProject module2" />
     <MESSAGE value="finalProject module2 before release 03_11_2023" />
     <MESSAGE value="finalProject module2  07_11_2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalProject module2  07_11_2023" />
+    <MESSAGE value="finalProject module2 07_11_2023 some editions in ReadMe" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalProject module2 07_11_2023 some editions in ReadMe" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
