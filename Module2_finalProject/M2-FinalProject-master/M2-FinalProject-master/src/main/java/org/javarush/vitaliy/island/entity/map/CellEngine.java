@@ -1,11 +1,7 @@
 package org.javarush.vitaliy.island.entity.map;
 
-
-
-
 import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
 import org.javarush.vitaliy.island.config.Probably;
-
 import java.util.*;
 
 public class CellEngine {

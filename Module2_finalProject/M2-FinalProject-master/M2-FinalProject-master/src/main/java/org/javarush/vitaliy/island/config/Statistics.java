@@ -5,10 +5,8 @@ import lombok.Setter;
 import org.javarush.vitaliy.island.abstraction.interfaces.AnimalBehaviour;
 import org.javarush.vitaliy.island.entity.map.Cell;
 import org.javarush.vitaliy.island.entity.map.GameMap;
-
-
 import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
-import org.javarush.vitaliy.island.entity.oraganism.animals.Animal;
+
 
 import java.util.HashMap;
 import java.util.Map;

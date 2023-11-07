@@ -1,11 +1,9 @@
 package org.javarush.vitaliy.island.engine;
 
 import lombok.Setter;
-import org.javarush.vitaliy.island.Main;
 import org.javarush.vitaliy.island.config.Statistics;
 import org.javarush.vitaliy.island.entity.map.GameMap;
 import org.javarush.vitaliy.island.view.StatisticMonitor;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -59,7 +57,7 @@ public class Simulation {
 
                 int year = Statistics.getInstance().getYear();
                 year++;
-                if (year>20){
+                if (year>50){
                     System.out.println("\n" +
                             "-------------ALL THE ANIMALS DIED OF OLD AGE-----------\n" +
                             "\n");

@@ -57,7 +57,6 @@ public abstract class Plant implements Organism, Reproducible {
     }
 
 
-
     @Override
     public void play() {
         this.reproducePlant(this);
@@ -98,14 +97,12 @@ public abstract class Plant implements Organism, Reproducible {
 
     public boolean isReproduceUnderLimit(GameObject newPlant, Cell cell) {
         Map<Class<? extends GameObject>, Set<GameObject>> residentsCell = cell.getResidents();
-        int numRes = 0;
-        for (Set<GameObject> residentSet : residentsCell.values()) {
 
-            for (GameObject resident : residentSet) {
-                numRes++;
-                if (numRes < newPlant.getLimits().getMaxAmount()) {
-                    return true;
-                }
+        Set<GameObject> target = residentsCell.get(newPlant.getClass());
+
+        for (GameObject resident : target) {
+            if (target.size() < resident.getLimits().getMaxAmount()) {
+                return true;
             }
         }
         return false;

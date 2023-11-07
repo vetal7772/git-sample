@@ -1,10 +1,7 @@
 package org.javarush.vitaliy.island.config;
 
 import lombok.Getter;
-import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
 import org.javarush.vitaliy.island.entity.map.Cell;
-import org.javarush.vitaliy.island.factory.GameObjectPrototypeFactory;
-import org.javarush.vitaliy.island.factory.PrototypeFactory;
 
 public class CellGenerator {
 

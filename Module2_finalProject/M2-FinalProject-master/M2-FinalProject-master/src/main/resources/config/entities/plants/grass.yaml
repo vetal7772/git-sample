@@ -3,4 +3,4 @@ limits:
   maxSpeed: 0
   maxFood: 0
   maxWeight: 1
-  maxAmount: 1000
+  maxAmount: 200

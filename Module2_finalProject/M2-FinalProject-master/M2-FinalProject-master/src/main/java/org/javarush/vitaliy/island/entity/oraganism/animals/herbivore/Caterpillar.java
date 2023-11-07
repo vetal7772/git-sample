@@ -24,7 +24,6 @@ public class Caterpillar extends Herbivore implements GameEntity, AnimalBehaviou
                 .stringTargetMatrix(getStringTargetMatrix())
                 .isAlive(getIsAlive())
                 .reproductionProbability(getReproductionProbability())
-                .hungerDecreased(getHungerDecreased())
                 .build();
     }
 

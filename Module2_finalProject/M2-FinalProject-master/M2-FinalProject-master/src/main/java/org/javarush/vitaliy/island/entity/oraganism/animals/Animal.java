@@ -11,14 +11,10 @@ import org.javarush.vitaliy.island.entity.map.CellEngine;
 import org.javarush.vitaliy.island.entity.oraganism.Limits;
 import org.javarush.vitaliy.island.abstraction.interfaces.Movable;
 import org.javarush.vitaliy.island.abstraction.interfaces.Organism;
-import org.javarush.vitaliy.island.entity.oraganism.plants.Plant;
 import org.javarush.vitaliy.island.factory.GameObjectPrototypeFactory;
 
 import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 import static org.javarush.vitaliy.island.entity.map.CellEngine.removeOrganism;
 
 @NoArgsConstructor
@@ -39,8 +35,7 @@ public abstract class Animal implements Organism, Movable {
     @Setter
     private double famine;
 
-
-    private boolean isAlive;
+    private boolean isAlive = true;
 
     public boolean getIsAlive() {
         return isAlive;
@@ -90,7 +85,7 @@ public abstract class Animal implements Organism, Movable {
     private void eat() {
         GameObject potentialFood = findPotentialFood();
         if (canEatFood(potentialFood)) {
-            assert potentialFood != null;
+            //  assert potentialFood != null;
             eatFood(potentialFood);
             Statistics.getInstance().gameObjectEaten(potentialFood);
         }
@@ -100,23 +95,25 @@ public abstract class Animal implements Organism, Movable {
         Cell currentCell = getCell();
         if (currentCell != null) {
             synchronized (currentCell.getLock()) {
-                double currentFamine = Math.random() * limits.getMaxFood();
-                // double currentFamine = getFamine();
+             double currentFamine = Math.random() * limits.getMaxFood();
+              //  double currentFamine = getFamine();
                 double maxFood = limits.getMaxFood();
                 double foodWeight = food.getLimits().getMaxWeight();
 
                 double newFamine = currentFamine + foodWeight;
                 if (newFamine > maxFood) {
                     newFamine = maxFood;
+
                 }
-                if (foodWeight == 0) {
-                    newFamine = currentFamine - (double) food.getLimits().getMaxWeight() / 6;
-                }
+//                else if (newFamine < maxFood / 6) {
+//                   dieFromStarvation();
+//                }
                 setFamine(newFamine);
                 removeOrganism(currentCell, food);
             }
         }
     }
+
 
     private int calculateFoodProbability(GameObject foodObject) {
         if (foodObject instanceof Organism) {
@@ -137,9 +134,9 @@ public abstract class Animal implements Organism, Movable {
                         .filter(entry -> entry.getKey() != this.getClass()) // Відмінний від поточного виду
                         .flatMap(entry -> entry.getValue().stream())
                         .filter(resident -> resident instanceof Organism)
-                        //     .filter(resident -> resident.getTargetMatrix.get(Organism). instanceof Organism)
                         .map(resident -> (Organism) resident)
                         .toList();
+
 
                 if (!potentialFood.isEmpty()) {
                     int randomIndex = Probably.randomInt(0, potentialFood.size());
@@ -163,7 +160,7 @@ public abstract class Animal implements Organism, Movable {
     }
 
     public void dieFromStarvation() {
-        if (getFamine() < 0) {
+        if (getFamine() <= 0) {
             Cell currentCell = getCell();
             if (currentCell != null) {
                 synchronized (currentCell.getLock()) {
@@ -225,17 +222,11 @@ public abstract class Animal implements Organism, Movable {
         Map<Class<? extends GameObject>, Set<GameObject>> residentsCell = cell.getResidents();
 
         Set<GameObject> target = residentsCell.get(newAnimal.getClass());
-
-
         for (GameObject resident : target) {
-
             if (target.size() < resident.getLimits().getMaxAmount()) {
-
                 return true;
             }
         }
-
-
         return false;
     }
 

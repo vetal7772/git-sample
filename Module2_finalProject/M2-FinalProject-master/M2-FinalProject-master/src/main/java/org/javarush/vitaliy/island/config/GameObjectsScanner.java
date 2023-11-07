@@ -3,7 +3,6 @@ package org.javarush.vitaliy.island.config;
 import org.javarush.vitaliy.island.abstraction.annotations.Config;
 import org.javarush.vitaliy.island.abstraction.annotations.GameObjectEntity;
 import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
-import org.javarush.vitaliy.island.abstraction.interfaces.Organism;
 import org.reflections.Reflections;
 
 import java.util.Set;

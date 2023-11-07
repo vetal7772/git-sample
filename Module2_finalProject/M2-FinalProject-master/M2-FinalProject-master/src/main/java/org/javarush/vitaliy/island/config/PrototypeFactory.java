@@ -1,10 +1,8 @@
 package org.javarush.vitaliy.island.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import org.javarush.vitaliy.island.abstraction.annotations.Config;
-import org.javarush.vitaliy.island.abstraction.interfaces.GameObject;
 import org.javarush.vitaliy.island.exceptions.InitGameException;
 import org.jetbrains.annotations.NotNull;
 
