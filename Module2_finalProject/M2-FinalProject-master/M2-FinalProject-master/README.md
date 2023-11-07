@@ -6,7 +6,7 @@ Usage
 Clone the repository to your local environment.
 Run the program.
 Observe the dynamics of the ecosystem through the console interface.
-After 30 tacts, you will see message "ALL THE ANIMALS DIED OF OLD AGE"
+After 50 tacts, you will see message "ALL THE ANIMALS DIED OF OLD AGE"
 
 Configuration
 Parameters of the ecosystem, such as dietary preferences, object placement, and more, can be adjusted in the project's configuration files. This allows making changes to the simulation and observing different scenarios of ecological system development.

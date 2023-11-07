@@ -4,35 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95e937e3-94e6-4752-83e3-bf2cf8b61ac9" name="Changes" comment="finalProject module2 before release 03_11_2023">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95e937e3-94e6-4752-83e3-bf2cf8b61ac9" name="Changes" comment="finalProject module2  07_11_2023">
       <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/abstraction/interfaces/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/abstraction/interfaces/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/CellGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/CellGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/GameObjectsScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/GameObjectsScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/PrototypeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/PrototypeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/config/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/engine/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/engine/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/map/CellEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/map/CellEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/animals/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/animals/herbivore/Caterpillar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/plants/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/java/org/javarush/vitaliy/island/entity/oraganism/plants/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/resources/config/entities/map/map.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/resources/config/entities/map/map.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/src/main/resources/config/entities/plants/grass.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/src/main/resources/config/entities/plants/grass.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/config/entities/map/map.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/config/entities/map/map.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/config/entities/plants/grass.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/config/entities/plants/grass.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/CellGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/CellGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/GameObjectsScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/GameObjectsScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/PrototypeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/PrototypeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/config/Statistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/engine/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/engine/Simulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/map/CellEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/map/CellEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/Animal$AnimalBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/Animal$AnimalBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/herbivore/Caterpillar.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/animals/herbivore/Caterpillar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/plants/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/M2-FinalProject-master/target/classes/org/javarush/vitaliy/island/entity/oraganism/plants/Plant.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +107,7 @@
       <workItem from="1699004586860" duration="19181000" />
       <workItem from="1699105704207" duration="2255000" />
       <workItem from="1699201224930" duration="16163000" />
-      <workItem from="1699378261979" duration="2422000" />
+      <workItem from="1699378261979" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="finalProject module2">
       <option name="closed" value="true" />
@@ -160,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699032331819</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finalProject module2  07_11_2023">
+      <option name="closed" value="true" />
+      <created>1699382436069</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699382436069</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +173,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finalProject module2" />
     <MESSAGE value="finalProject module2 before release 03_11_2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalProject module2 before release 03_11_2023" />
+    <MESSAGE value="finalProject module2  07_11_2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalProject module2  07_11_2023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
